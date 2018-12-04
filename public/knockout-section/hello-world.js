@@ -10,9 +10,9 @@ var ViewModel = function(first, last) {
 
 window.ViewModel = ViewModel;
 
-window.ApplyBinding = function() {
+document.addEventListener("DOMContentLoaded", function(){
     document.getElementById('knockout-section').innerHTML += `<div data-bind="template: { name: 'hello-world', data: data }"></div>`;
     ko.applyBindings({
-        data: new ViewModel("Planet", "Earth")
+        data: new ViewModel("Knockout", "world")
     }, document.getElementById('knockout-section'));
-}
+});
